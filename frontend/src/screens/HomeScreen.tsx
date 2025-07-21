@@ -22,7 +22,7 @@ export default function HomeScreen() {
     }
 
     return(
-        <div className="w-dvw h-dvw flex">
+        <div className="w-dvw h-dvh flex">
 
             {/* Main Container */}
             <div className="h-dvh flex-4 bg-zinc-200 flex justify-center items-center">

@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS users(
 
 CREATE TABLE IF NOT EXISTS products(
     id BIGSERIAL PRIMARY KEY,
-    user_id BIGINT NOT NULL,
     title VARCHAR(150) NOT NULL,
     price DECIMAL NOT NULL,
     stock INT NOT NULL,
@@ -20,7 +19,6 @@ CREATE TABLE IF NOT EXISTS products(
 
 CREATE TABLE IF NOT EXISTS invoices(
     id BIGSERIAL PRIMARY KEY,
-    user_id BIGINT NOT NULL,
     customer_name VARCHAR(150) NOT NULL,
     customer_phone VARCHAR(30) NOT NULL,
     total_amount DECIMAL NOT NULL,

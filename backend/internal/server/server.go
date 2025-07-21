@@ -11,6 +11,7 @@ import (
 
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/joho/godotenv"
+	"github.com/rohits3m/billing-system/internal/middlewares"
 )
 
 type ServerResponse struct {
@@ -56,7 +57,7 @@ func NewServer(config ServerConfig) *Server {
 func (server *Server) Run() {
 	srv := http.Server{
 		Addr:         fmt.Sprintf(":%s", os.Getenv("PORT")),
-		Handler:      server.Mux,
+		Handler:      middlewares.Cors(server.Mux),
 		ReadTimeout:  5 * time.Second,
 		WriteTimeout: 10 * time.Second,
 		ErrorLog:     slog.NewLogLogger(server.Logger.Handler(), slog.LevelError),
